@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import './Form.css';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('v@gmail.com');
+  const [password, setPassword] = useState('vicky');
   const navigate = useNavigate();
 
   const handleSubmit = async(event) => {
