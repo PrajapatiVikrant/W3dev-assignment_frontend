@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = async(event) => {
     event.preventDefault();
     // Perform login operation with email and password
-    const response = await axios.post(`https://green-salesmen-rzdwh.pwskills.app:3000/auth/login?email=${email}&password=${password}`);
+    const response = await axios.post(`https://w3dev-assignment-backend.vercel.app/auth/login?email=${email}&password=${password}`);
     console.log(response)
     
     localStorage.setItem('token',response.data.token)

@@ -14,7 +14,7 @@ const TodoList = () => {
   const getData = async()=>{
      
 
-     const response = await axios.get('https://green-salesmen-rzdwh.pwskills.app:3000/todo', {
+     const response = await axios.get('https://w3dev-assignment-backend.vercel.app/todo', {
          headers: {
              Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
          }
@@ -32,7 +32,7 @@ const TodoList = () => {
     event.preventDefault();
     if (editIndex !== null) {
       
-    const response = await axios.put(`https://green-salesmen-rzdwh.pwskills.app:3000/todo/${editIndex}?updateData=${inputValue}`,{}, {
+    const response = await axios.put(`https://w3dev-assignment-backend.vercel.app/todo/${editIndex}?updateData=${inputValue}`,{}, {
         headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
         }
@@ -41,7 +41,7 @@ const TodoList = () => {
       setEditIndex(null);
     }else{
       
-      const response = await axios.post(`https://green-salesmen-rzdwh.pwskills.app:3000/todo?newData=${inputValue}`,{}, {
+      const response = await axios.post(`https://w3dev-assignment-backend.vercel.app/todo?newData=${inputValue}`,{}, {
           headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
           }
@@ -61,7 +61,7 @@ const TodoList = () => {
 
   const handleDelete = async(index) => {
     
-    const response = await axios.delete(`https://green-salesmen-rzdwh.pwskills.app:3000/todo/${index}`, {
+    const response = await axios.delete(`https://w3dev-assignment-backend.vercel.app/todo/${index}`, {
           headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
           }

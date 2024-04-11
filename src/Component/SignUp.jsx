@@ -13,7 +13,7 @@ const SignUp = () => {
   const handleSubmit = async(event) => {
     event.preventDefault();
     // Perform signup operation with name, email, and password
-    const response = await axios.post(`https://green-salesmen-rzdwh.pwskills.app:3000/auth/signUp?name=${name}&email=${email}&password=${password}`);
+    const response = await axios.post(`https://w3dev-assignment-backend.vercel.app/auth/signUp?name=${name}&email=${email}&password=${password}`);
     localStorage.setItem('token',response.data.token)
     navigate('/todo')
     setName('')
