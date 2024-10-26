@@ -60,11 +60,7 @@ const TodoList = () => {
     setInputValue(text);
     setEditIndex(id);
   };
-  const handleCheck = (id,checkstatus)=>{
-    console.log(checkstatus)
-    const response = await axios.put(`https://w3dev-assignment-backend.vercel.app/todo/check/${id}/${checkstatus}`)
-    alert(response.data.message)
-  }
+ 
   const handleDelete = async(id) => {
     
     const response = await axios.delete(`https://w3dev-assignment-backend.vercel.app/todo/${id}`, {
@@ -74,6 +70,11 @@ const TodoList = () => {
       });
       alert(response.data.message)
   };
+  const handleCheck = (id,checkstatus)=>{
+    console.log(checkstatus)
+    const response = await axios.put(`https://w3dev-assignment-backend.vercel.app/todo/check/${id}/${checkstatus}`)
+    alert(response.data.message)
+  }
 
   return (
     <div className="todo-container">
