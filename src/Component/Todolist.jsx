@@ -8,18 +8,18 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [editIndex, setEditIndex] = useState(null);
-  // useEffect(()=>{
-  //   getData();
-  // })
-  // const getData = async()=>{
+  useEffect(()=>{
+    getData();
+  })
+  const getData = async()=>{
      
 
-  //    const response = await axios.get('https://w3dev-assignment-backend.vercel.app/todo', {
-  //        headers: {
-  //            Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
-  //        }
+     const response = await axios.get('https://w3dev-assignment-backend.vercel.app/todo', {
+         headers: {
+             Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
+         }
          
-  //    });
+     });
 
      
   //  console.log(response.data.message)
