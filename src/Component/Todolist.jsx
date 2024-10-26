@@ -52,8 +52,8 @@ const TodoList = () => {
     
     
      
-  //   setInputValue('');
-  // };
+    setInputValue('');
+  };
 
   // const handleEdit = (text,id) => {
   //   setInputValue(text);
