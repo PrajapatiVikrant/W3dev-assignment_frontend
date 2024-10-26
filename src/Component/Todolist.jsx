@@ -21,7 +21,7 @@ const TodoList = () => {
          
      });
      
-   
+   console.log(response.data.message)
    setTodos(response.data.message)
   }
   const handleInputChange = (event) => {
