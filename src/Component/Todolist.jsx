@@ -8,6 +8,7 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [editIndex, setEditIndex] = useState(null);
+  
   useEffect(()=>{
     getData();
   })
@@ -60,6 +61,7 @@ const TodoList = () => {
     setEditIndex(id);
   };
   const handleCheck = (id,checkstatus)=>{
+    console.log(checkstatus)
     const response = await axios.put(`https://w3dev-assignment-backend.vercel.app/todo/check/${id}/${checkstatus}`)
     alert(response.data.message)
   }
@@ -88,7 +90,7 @@ const TodoList = () => {
       <ul className="todo-list">
         {todos.map((todo, index) => (
           <li key={index}>
-           <input type="checkbox" onClick={()=>handleCheck(todo._id)}/> {todo.text}
+           <input type="checkbox"  onClick={(e)=>handleCheck(todo._id,e.target.value)}/> {todo.text}
             <div>
               <button onClick={() => handleEdit(todo._id,todo.text)}>Edit</button>
               <button onClick={() => handleDelete(todo._id)}>Delete</button>
