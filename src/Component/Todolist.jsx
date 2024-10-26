@@ -25,30 +25,30 @@ const TodoList = () => {
    console.log(response.data.message)
    setTodos(response.data.message)
   }
-  // const handleInputChange = (event) => {
-  //   setInputValue(event.target.value);
-  // };
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
-  // const handleSubmit = async(event) => {
-  //   event.preventDefault();
-  //   if (editIndex !== null) {
+  const handleSubmit = async(event) => {
+    event.preventDefault();
+    if (editIndex !== null) {
       
-  //   const response = await axios.put(`https://w3dev-assignment-backend.vercel.app/todo/${editIndex}?updateData=${inputValue}`,{}, {
-  //       headers: {
-  //           Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
-  //       }
-  //   });
-  //     alert(response.data.message)
-  //     setEditIndex(null);
-  //   }else{
+    const response = await axios.put(`https://w3dev-assignment-backend.vercel.app/todo/${editIndex}?updateData=${inputValue}`,{}, {
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
+        }
+    });
+      alert(response.data.message)
+      setEditIndex(null);
+    }else{
       
-  //     const response = await axios.post(`https://w3dev-assignment-backend.vercel.app/todo?newData=${inputValue}`,{}, {
-  //         headers: {
-  //             Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
-  //         }
-  //     });
-  //     alert(response.data.message)
-  //   }
+      const response = await axios.post(`https://w3dev-assignment-backend.vercel.app/todo?newData=${inputValue}`,{}, {
+          headers: {
+              Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
+          }
+      });
+      alert(response.data.message)
+    }
     
     
      
