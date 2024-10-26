@@ -54,14 +54,17 @@ const TodoList = () => {
     setInputValue('');
   };
 
-  const handleEdit = (index) => {
-    setInputValue(todos[index]);
-    setEditIndex(index);
+  const handleEdit = (text,id) => {
+    setInputValue(text);
+    setEditIndex(id);
   };
-
-  const handleDelete = async(index) => {
+  const handleCheck = (id,checkstatus)=>{
+    const response = await axios.put(`https://w3dev-assignment-backend.vercel.app/todo/check/${id}/${checkstatus}`)
+    alert(response.data.message)
+  }
+  const handleDelete = async(id) => {
     
-    const response = await axios.delete(`https://w3dev-assignment-backend.vercel.app/todo/${index}`, {
+    const response = await axios.delete(`https://w3dev-assignment-backend.vercel.app/todo/${id}`, {
           headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the Authorization header
           }
@@ -84,10 +87,10 @@ const TodoList = () => {
       <ul className="todo-list">
         {todos.map((todo, index) => (
           <li key={index}>
-            {todo}
+           <input type="check" onClick={()=>handleCheck(todo._id)}/> {todo.text}
             <div>
-              <button onClick={() => handleEdit(index)}>Edit</button>
-              <button onClick={() => handleDelete(index)}>Delete</button>
+              <button onClick={() => handleEdit(todo._id,todo.text)}>Edit</button>
+              <button onClick={() => handleDelete(todo._id)}>Delete</button>
             </div>
           </li>
         ))}
