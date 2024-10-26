@@ -5,9 +5,9 @@ import { useEffect } from 'react';
 import './TodoList.css';
 
 const TodoList = () => {
-  // const [todos, setTodos] = useState([]);
-  // const [inputValue, setInputValue] = useState('');
-  // const [editIndex, setEditIndex] = useState(null);
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const [editIndex, setEditIndex] = useState(null);
   // useEffect(()=>{
   //   getData();
   // })
