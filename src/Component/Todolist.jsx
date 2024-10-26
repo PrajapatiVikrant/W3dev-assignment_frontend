@@ -23,7 +23,7 @@ const TodoList = () => {
 
      
    console.log(response.data.message)
-  //  setTodos(response.data.message)
+   setTodos(response.data.message)
   }
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -85,7 +85,7 @@ const TodoList = () => {
         />
         <button type="submit">{editIndex !== null ? 'Update' : 'Add'}</button>
       </form>
-      <ul className="todo-list">
+      {/* <ul className="todo-list">
         {todos.map((todo, index) => (
           <li key={index}>
            <input type="check" onClick={()=>handleCheck(todo._id)}/> {todo.text}
@@ -95,7 +95,7 @@ const TodoList = () => {
             </div>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
