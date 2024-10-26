@@ -76,7 +76,7 @@ const TodoList = () => {
   return (
     <div className="todo-container">
       <h1>Todo List</h1>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={inputValue}
@@ -84,7 +84,7 @@ const TodoList = () => {
           placeholder="Enter your todo..."
         />
         <button type="submit">{editIndex !== null ? 'Update' : 'Add'}</button>
-      </form>
+      </form> */}
       {/* <ul className="todo-list">
         {todos.map((todo, index) => (
           <li key={index}>
