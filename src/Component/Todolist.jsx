@@ -22,7 +22,7 @@ const TodoList = () => {
      });
 
      
-   console.log(response.data.message)
+ 
    setTodos(response.data.message)
   }
   const handleInputChange = (event) => {
@@ -88,7 +88,7 @@ const TodoList = () => {
       <ul className="todo-list">
         {todos.map((todo, index) => (
           <li key={index}>
-           <input type="check" onClick={()=>handleCheck(todo._id)}/> {todo.text}
+           <input type="checkbox" onClick={()=>handleCheck(todo._id)}/> {todo.text}
             <div>
               <button onClick={() => handleEdit(todo._id,todo.text)}>Edit</button>
               <button onClick={() => handleDelete(todo._id)}>Delete</button>
